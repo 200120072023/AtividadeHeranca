@@ -24,23 +24,19 @@ namespace herença1.classes.exercicios
         }
         public override void Sacar(double valor ) 
         {
-            ChequeEspecial = 300;
-            if(valor<= Saldo)
+           
+            if(valor <= Saldo + ChequeEspecial)
             {
                 double conta = valor - Saldo; 
                 Console.WriteLine(conta);
             }
-            else if (valor > Saldo)
+              else
             {
-                double tudo = Saldo + ChequeEspecial;
-                if ( tudo <= Saldo )
-                {
-                    Console.WriteLine("saque efetuado com sucesso, mas se cheque foi ispirado ");
-                }
+                Console.WriteLine("saldo insuficiente!");
+            }
                    
                
 
-            }
             
 
         }

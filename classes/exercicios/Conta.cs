@@ -38,7 +38,7 @@ namespace herença1.classes.exercicios
             }
             
         }
-        public void Depositar(double valor)
+        public virtual void Depositar(double valor)
         {
             if (valor >= 0)
             {
