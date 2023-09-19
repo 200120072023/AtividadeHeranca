@@ -15,7 +15,7 @@ namespace herença1.classes.exercicios
 
         public double  LimiteEmprestimo { get; set; }
 
-        public ContaEmpresarial(double totalemprestimo, double anuidade, double limiteEmprestimo, int conta , string nome , double Saldo , string agencia )
+        public ContaEmpresarial( double anuidade, double limiteEmprestimo, int conta , string nome , double Saldo , string agencia )
        
             :base(conta , nome, Saldo , agencia) 
         {
@@ -24,11 +24,11 @@ namespace herença1.classes.exercicios
             LimiteEmprestimo = limiteEmprestimo;
         }
 
-        public void Eprestimo(double valor )
+        public  void Eprestimo(double valor )
         {
-            if (valor <= LimiteEmprestimo) 
+            if (valor <= LimiteEmprestimo - totalemprestimo) 
             {
-                Saldo += valor;
+                saldo += valor;
                 totalemprestimo += valor;
                 Console.WriteLine($" Emprestimo de R$ {valor} realizado com suesso  ");
 
@@ -43,26 +43,18 @@ namespace herença1.classes.exercicios
         public override void Sacar(double valor )
         {
 
-            if (valor <= 5000.00)
-            {
-                base.Sacar(valor);
-            }
-            else
-            {
+            saldo -= valor;
                 if (valor > 5000.00)
                 {
-                    Saldo -= (valor + 5);
+                    saldo -=  5;
                     Console.WriteLine(valor);
                 }
                 else
                 {
                     Console.WriteLine("saldo insuficiente");
                 }
-            }
-
-
-
-        }
+        
+         }
 
 
     }

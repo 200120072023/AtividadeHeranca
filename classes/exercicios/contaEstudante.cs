@@ -25,9 +25,9 @@ namespace herença1.classes.exercicios
         public override void Sacar(double valor ) 
         {
            
-            if(valor <= Saldo + ChequeEspecial)
+            if(valor <= saldo + ChequeEspecial)
             {
-                double conta = valor - Saldo; 
+                double conta = valor - saldo; 
                 Console.WriteLine(conta);
             }
               else

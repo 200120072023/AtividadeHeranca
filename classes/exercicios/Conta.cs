@@ -15,22 +15,22 @@ namespace herença1.classes.exercicios
         public int conta  { get; set; }
         public string nome { get; set; }
 
-        public double Saldo  { get; set; }
+        public double saldo  { get; set; }
 
         public string agencia   { get; set;}
 
         public Conta(int conta, string nome, double saldo, string agencia)
         {
-            this.Saldo = saldo;
+            this.saldo = saldo;
 
         }
 
         public  virtual void Sacar(double valor  )
         {
-            if (valor <= Saldo) 
+            if (valor <= saldo) 
             {
-                Saldo -= valor;
-                Console.WriteLine($"seque efetuado! seu saldo é {Saldo}");
+                saldo -= valor;
+                Console.WriteLine($"seque efetuado! seu saldo é {saldo}");
             }
             else
             {
@@ -42,8 +42,8 @@ namespace herença1.classes.exercicios
         {
             if (valor >= 0)
             {
-                Saldo+= valor;
-                Console.WriteLine($"foi depositado {valor} na sua conta , seu saldo é {Saldo}");
+                saldo+= valor;
+                Console.WriteLine($"foi depositado {valor} na sua conta , seu saldo é {saldo}");
             }
 
         }
